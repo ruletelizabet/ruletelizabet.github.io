@@ -16,8 +16,7 @@ body {
 
 .main {
      top: 200px;
-     right: 0;
-     margin: auto;
+     margin: 0 auto;
      width: 300px;
      height: 400px;
      overflow: hidden;
