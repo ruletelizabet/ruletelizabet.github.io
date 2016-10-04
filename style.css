@@ -9,3 +9,13 @@ body {
     color: white;
 
 }
+
+
+.main {
+    position:fixed;
+    overflow:hidden;
+    background: grey;
+
+    width: 100%;
+    height: 100%;
+}
