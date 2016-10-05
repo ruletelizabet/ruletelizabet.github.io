@@ -56,7 +56,7 @@
                             'Кексики',
                             'Пирог',
                             'Манная каша'],
-        list_420_games =   ['Гадалочка',
+        list_games =       ['Гадалочка',
                             'Телеканалы',
                             'Аниме',
                             'Видосы на че',
@@ -74,7 +74,8 @@
                             'Смотреть Адвенчур Тайм',
                             'Смотреть Гриффинов',
                             'Озвучивание Любого сериала с субтитрами по Вио',
-                            'Игра в Вио с двойными наушниками'];
+                            'Игра в Вио с двойными наушниками'],
+        list_binary =      ['ДЫА','НИЕТ'];
             
 function randomList(array) {
     return array[Math.floor(Math.random()*array.length)];        
@@ -118,8 +119,11 @@ jQuery.fn.getArray = function () {
         case 'list_420_sugar':
             a = list_420_sugar;
             break;
-        case 'list_420_games':
-            a = list_420_games;
+        case 'list_games':
+            a = list_games;
+            break;
+        case 'list_binary':
+            a = list_binary;
             break;
     
         default:
@@ -129,10 +133,30 @@ jQuery.fn.getArray = function () {
     return a;
 }
 
+function showPage(name) {    
+    $('.page').hide();
+    $('#'+name).show();
+}
+
 $(function() {
 
-    
+    showPage('start');
 
+    $('.href').on("tap",function () {
+        showPage($(this).attr('data-page'));
+    });
+
+    $('.question:not(#list_420_mix)').on("tap",function () {
+        var text = randomList($(this).getArray());
+        $('#answer div').text(text);
+    });
+
+    $('#list_420_mix').on("tap",function () {
+        var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
+        $('#answer div').text(text);
+    });
+
+/*
 
     clear();
 
@@ -161,10 +185,10 @@ $(function() {
             $(this).css('text-align','center');
         }
     });
-
-    $('.buttons').center();
+*/
+    $('.center').center();
     $(window).resize(function(){
-        $('.buttons').center();
+        $('.center').center();
     });
 
 });

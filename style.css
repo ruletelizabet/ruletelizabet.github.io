@@ -21,11 +21,7 @@ body {
      overflow: hidden;
      position: fixed;
      background: url('i8iF1Si0jRw.jpg') no-repeat center center fixed;
-       -webkit-background-size: cover;
-       -moz-background-size: cover;
-       -o-background-size: cover;
-       background-size: cover;
-
+    background-size: cover;
 }
 
 .bgimage {
@@ -36,17 +32,29 @@ body {
 
 }
 
-.buttons {
+.center {
     margin: 0 auto;
     color: darkslategrey;
     width: 350px;
     
 }
 
-.buttons div {
-    background: rgba(255,255,255,.1);
 
+
+
+.center .page div {
+    background: rgba(255,255,255,.1);
+    cursor: pointer;
 
     padding: 10px;
     margin: 10px;
+}
+
+#answer {
+    background: rgba(255,255,255,.1);
+    cursor: pointer;
+
+    padding: 10px;
+    margin: 10px;
+
 }

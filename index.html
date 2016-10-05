@@ -30,25 +30,34 @@
 <body>
     <div class="main">
     <div class="bgimage">
-        <div class="buttons">          
+        <div class="center">          
 
-            <a href="sec.html">111</a>
+            <div class="page" id="start">                
+                <div id="list_gurme" data-page="gurme" class="href">Гурмэ</div>  
+                <div id="list_drugs" data-page="answer" class="href question">Spisok ONE</div>   
+                <div id="list_00420" data-page="g420" class="href">Предложения на накурочку</div> 
+                <div id="list_games" data-page="answer" class="href question">Незамысловатые игры</div> 
+                <div id="list_binary" data-page="answer" class="href question">Монеточка</div> 
+            </div>
 
-            <div id="list_gurme_light" data-text="Гурмэ | Легкомысленный"></div>  
+            <div class="page" id="gurme">
+                <div id="list_gurme_light" data-page="answer" class="href question">Легкомысленный</div>  
+                <div id="list_gurme_std" data-page="answer" class="href question">Серьезные намерения</div>   
+                <div id="list_gurme_krazy" data-page="answer" class="href question">Безумный</div>  
+                <div id="back" data-page="start" class="href">Назад</div>  
+            </div>
 
-            <div id="list_gurme_std" data-text="Гурмэ | Серьезные намерения"></div>   
+            <div class="page" id="g420">
+                <div id="list_420_salt" data-page="answer" class="href question">Солененькое</div> 
+                <div id="list_420_sugar" data-page="answer" class="href question">Сладенькое</div>  
+                <div id="list_420_mix" data-page="answer" class="href question">Микс</div>  
+                <div id="back" data-page="start" class="href">Назад</div>  
+            </div>
 
-            <div id="list_gurme_krazy" data-text="Гурмэ | Безумный"></div>  
+            <div class="page" id="answer" >
+                <div id="back" data-page="start" class="href">Ответ</div>  
+            </div>
 
-            <div id="list_drugs" data-text="Список ONE"></div>   
-
-            <div id="list_420_salt" data-text="Предложения на накурочку | Солененькое"></div> 
-
-            <div id="list_420_sugar" data-text="Предложения на накурочку | Сладенькое"></div>  
-
-            <div id="list_420_mix" data-text="Предложения на накурочку | Микс"></div>  
-
-            <div id="list_420_games" data-text="Незамысловатые игры"></div>
 
         </div>
 
