@@ -139,7 +139,7 @@ function showPage(name) {
         $('.main').css('background', 'url("' + name + '.jpg") no-repeat center center fixed');
         $('.main').css('background-size','cover');
     }
-    if (name == 'start') {
+    if (name == 'start' || name == 'game') {
         $('.main').css('background','repeating-radial-gradient(circle, rgba(165,112,184,1), rgba(165,112,184,1) 10px, rgba(54,108,132,1) 10px, rgba(54,108,132,1) 20px)');
 
     }
@@ -149,7 +149,7 @@ function showPage(name) {
 $(function() {
 
     showPage('start');
-
+    var timerId;
 
     $('.href').off('tap').on("tap",function (event) {
         event.preventDefault();
@@ -198,16 +198,23 @@ $(function() {
 
     });
 
-    $('#game #holder').off('taphold').on("taphold",function (event) {
+    $('#game #holder').off('tap').on("tap",function (event) {
         event.preventDefault();
         event.stopPropagation();
 
-        var timerId = setInterval(function() {
+        $('.bgimage').css('background', 'none');
+        timerId = setInterval(function() {
+            $('.main').css('background','repeating-radial-gradient(circle, rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',1), rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',.9) 10px, rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',1) 20px, rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',.9) 40px)');
 
-            $('.main').css('background','repeating-radial-gradient(circle, rgba('+Math.floor(Math.random()*255)+',112,184,.8), rgba(165,112,184,.3) 10px, rgba(54,108,132,.8) 20px, rgba(54,108,132,.3) 40px)');
         }, 100);
         
 
+
+    });
+
+    $('#game #back').on("tap",function (event) {
+        clearInterval(timerId);
+        $('.bgimage').css('background', 'repeating-radial-gradient(circle, rgba(165,112,184,.3), rgba(165,112,184,.3) 10px, rgba(54,108,132,.3) 10px, rgba(54,108,132,.3) 20px)');
 
     });
 
