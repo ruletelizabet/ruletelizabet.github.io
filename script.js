@@ -136,22 +136,15 @@ jQuery.fn.getArray = function () {
 function showPage(name) {    
     $('.page').hide(300);
     $('#'+name).show(300);
-    $('.center').center();
 }
 
 $(function() {
 
-    $('.center').center();
     showPage('start');
-    $('.center').center();
 
-    $(window).resize(function(){
-        $('.center').center();
-    });
 
     $('.href').on("tap",function () {
         showPage($(this).attr('data-page'));
-        $('.center').center();
     });
 
     $('.question:not(#list_420_mix)').on("tap",function () {
