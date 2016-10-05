@@ -142,16 +142,16 @@ $(function() {
 
     showPage('start');
 
-    $('.href').on("tap",function () {
+    $('.href').on("vclick",function () {
         showPage($(this).attr('data-page'));
     });
 
-    $('.question:not(#list_420_mix)').on("tap",function () {
+    $('.question:not(#list_420_mix)').on("vclick",function () {
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
     });
 
-    $('#list_420_mix').on("tap",function () {
+    $('#list_420_mix').on("vclick",function () {
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
     });
