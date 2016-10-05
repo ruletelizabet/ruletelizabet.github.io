@@ -134,8 +134,8 @@ jQuery.fn.getArray = function () {
 }
 
 function showPage(name) {    
-    $('.page').hide(300);
-    $('#'+name).show(300);
+    $('.page').hide(400);
+    $('#'+name).show(400);
 }
 
 $(function() {
@@ -150,11 +150,13 @@ $(function() {
     $('.question:not(#list_420_mix)').on("tap",function () {
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
+        showPage('answer');
     });
 
     $('#list_420_mix').on("tap",function () {
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
+        showPage('answer');
     });
 
 /*
