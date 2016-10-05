@@ -75,7 +75,7 @@
                             'Смотреть Гриффинов',
                             'Озвучивание Любого сериала с субтитрами по Вио',
                             'Игра в Вио с двойными наушниками'],
-        list_binary =      ['ДЫА','НИЕТ'];
+        list_binary =      ['АРЁЛ','РЕШКА'];
             
 function randomList(array) {
     return array[Math.floor(Math.random()*array.length)];        
@@ -134,8 +134,8 @@ jQuery.fn.getArray = function () {
 }
 
 function showPage(name) {    
-    $('.page').hide(400);
-    $('#'+name).show(400);
+    $('.page').hide(200);
+    $('#'+name).show(200);
 }
 
 $(function() {
@@ -148,7 +148,6 @@ $(function() {
         event.stopPropagation();
 
         showPage($(this).attr('data-page'));
-        //alert(1);
     });
 
     $('.question:not(#list_420_mix)').off('tap').on("tap",function (event) {
@@ -158,7 +157,6 @@ $(function() {
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
         showPage('answer');
-        //alert(2);
     });
 
     $('#list_420_mix').off('tap').on("tap",function (event) {
@@ -168,7 +166,6 @@ $(function() {
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
         showPage('answer');
-        //alert(3);
     });
 
 /*
