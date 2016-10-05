@@ -143,29 +143,32 @@ $(function() {
     showPage('start');
 
 
-    $('.href').on("tap",function (event) {
+    $('.href').off('tap').on("tap",function (event) {
         event.preventDefault();
-event.stopPropagation();
+        event.stopPropagation();
+
         showPage($(this).attr('data-page'));
-        alert(1);
+        //alert(1);
     });
 
-    $('.question:not(#list_420_mix)').on("tap",function (event) {
+    $('.question:not(#list_420_mix)').off('tap').on("tap",function (event) {
         event.preventDefault();
-event.stopPropagation();
+        event.stopPropagation();
+
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
         showPage('answer');
-        alert(2);
+        //alert(2);
     });
 
-    $('#list_420_mix').on("tap",function (event) {
+    $('#list_420_mix').off('tap').on("tap",function (event) {
         event.preventDefault();
-event.stopPropagation();
+        event.stopPropagation();
+
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
         showPage('answer');
-        alert(3);
+        //alert(3);
     });
 
 /*
