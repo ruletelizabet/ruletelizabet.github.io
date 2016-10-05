@@ -203,6 +203,7 @@ $(function() {
         event.stopPropagation();
 
         $('.bgimage').css('background', 'none');
+        clearInterval(timerId);
         timerId = setInterval(function() {
             $('.main').css('background','repeating-radial-gradient(circle, rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',1), rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',.9) 10px, rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',1) 20px, rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',.9) 40px)');
 
