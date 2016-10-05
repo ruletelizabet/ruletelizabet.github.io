@@ -92,9 +92,7 @@ function clear () {
 
 
 jQuery.fn.center = function () {
-    this.css("position","absolute");
-    this.css("top", (($(window).height() - this.outerHeight()) / 2) + $(window).scrollTop() + "px");
-    this.css("left", (($(window).width() - this.outerWidth()) / 2) + $(window).scrollLeft() + "px");
+    this.css("padding-top", (($(window).height() - this.outerHeight()) / 2) + $(window).scrollTop() + "px");
     return this;
 }
 
@@ -166,6 +164,7 @@ $(function() {
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
         showPage('answer');
+        $('#answer').center();
     });
 
     $('#list_420_mix').off('tap').on("tap",function (event) {
@@ -175,6 +174,7 @@ $(function() {
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
         showPage('answer');
+        $('#answer').center();
     });
 
     $('#list_binary').off('tap').on("tap",function (event) {
@@ -184,6 +184,7 @@ $(function() {
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
         showPage('answer');
+        $('#answer').center();
 
         if (text == 'АРЁЛ') {
             $('.main').css('background', 'url("coint.jpg") no-repeat center center fixed');

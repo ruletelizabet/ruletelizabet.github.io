@@ -31,7 +31,7 @@ body {
      height: 100%;
      overflow: hidden;
      position: fixed;
-     background: repeating-radial-gradient(circle, rgba(165,112,184,.7), rgba(165,112,184,.7) 10px, rgba(54,108,132,.7) 10px, rgba(54,108,132,.7) 20px);
+     background: repeating-radial-gradient(circle, rgba(165,112,184,.3), rgba(165,112,184,.3) 10px, rgba(54,108,132,.3) 10px, rgba(54,108,132,.3) 20px);
 }
 
 .center {
@@ -43,7 +43,7 @@ body {
 
 
 .page > div {
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.3);
     cursor: pointer;
     margin: 10px;
     padding: 10px;
@@ -84,23 +84,23 @@ body {
 
 
 .href[data-page="gurme"]  {
-        background: url("gurme.jpg") no-repeat center center fixed;
-        background-size: cover;
+        background: url("gurmeb.jpg");
+        background-size: contain;
 }
 
 .href[data-page="g420"]  {
-        background: url("g420.jpg") no-repeat center center fixed;
-        background-size: cover;
+        background: url("g420.jpg");
+        background-size: contain;
 }
 .href[data-page="coin"]  {
-        background: url("coin.jpg") no-repeat center center fixed;
-        background-size: cover;
+        background: url("coin.jpg");
+        background-size: contain;
 }
 .href[data-page="games"]  {
-        background: url("games.jpg") no-repeat center center fixed;
-        background-size: cover;
+        background: url("gamesb.jpg");
+        background-size: contain;
 }
 .href[data-page="desteny"]  {
-        background: url("desteny.jpg") no-repeat center center fixed;
-        background-size: cover;
+        background: url("destenyb.jpg");
+        background-size: contain;
 }
