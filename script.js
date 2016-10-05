@@ -135,7 +135,16 @@ jQuery.fn.getArray = function () {
 
 function showPage(name) {    
     $('.page').hide(200);
-    $('#'+name).show(200);
+    $('#' + name).show(200);
+
+    if (name != 'answer') {
+        $('.main').css('background', 'url("' + name + '.jpg") no-repeat center center fixed');
+        $('.main').css('background-size','cover');
+    }
+    if (name == 'start') {
+        $('.main').css('background','repeating-radial-gradient(circle, rgba(165,112,184,1), rgba(165,112,184,1) 10px, rgba(54,108,132,1) 10px, rgba(54,108,132,1) 20px)');
+
+    }
 }
 
 $(function() {
@@ -150,7 +159,7 @@ $(function() {
         showPage($(this).attr('data-page'));
     });
 
-    $('.question:not(#list_420_mix)').off('tap').on("tap",function (event) {
+    $('.question:not(#list_420_mix):not(#list_binary)').off('tap').on("tap",function (event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -166,6 +175,25 @@ $(function() {
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
         showPage('answer');
+    });
+
+    $('#list_binary').off('tap').on("tap",function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        var text = randomList($(this).getArray());
+        $('#answer div').text(text);
+        showPage('answer');
+
+        if (text == 'АРЁЛ') {
+            $('.main').css('background', 'url("coint.jpg") no-repeat center center fixed');
+            $('.main').css('background-size','cover');
+        }
+        else {
+            $('.main').css('background', 'url("coinf.jpg") no-repeat center center fixed');
+            $('.main').css('background-size','cover');
+        }
+
     });
 
 /*

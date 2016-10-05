@@ -10,6 +10,8 @@ body {
     overflow:hidden;
     color: white;
 
+    font-size: 22px;
+
     font-family:  Courier New, monospace;
 
 }
@@ -29,7 +31,7 @@ body {
      height: 100%;
      overflow: hidden;
      position: fixed;
-     background: repeating-radial-gradient(circle, rgba(165,112,184,.3), rgba(165,112,184,.3) 10px, rgba(54,108,132,.3) 10px, rgba(54,108,132,.3) 20px);
+     background: repeating-radial-gradient(circle, rgba(165,112,184,.5), rgba(165,112,184,.5) 10px, rgba(54,108,132,.5) 10px, rgba(54,108,132,.5) 20px);
 }
 
 .center {
