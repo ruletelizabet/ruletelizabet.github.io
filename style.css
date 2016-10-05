@@ -22,8 +22,8 @@ body {
     height: 100%;
     overflow: hidden;
     position: fixed;
-    background: url('i8iF1Si0jRw.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: repeating-radial-gradient(circle, rgba(165,112,184,.5), rgba(165,112,184,.5) 10px, rgba(54,108,132,.5) 10px, rgba(54,108,132,.5) 20px);
+
 }
 
 .bgimage {
@@ -31,7 +31,7 @@ body {
      height: 100%;
      overflow: hidden;
      position: fixed;
-     background: repeating-radial-gradient(circle, rgba(165,112,184,.5), rgba(165,112,184,.5) 10px, rgba(54,108,132,.5) 10px, rgba(54,108,132,.5) 20px);
+     background: repeating-radial-gradient(circle, rgba(165,112,184,.7), rgba(165,112,184,.7) 10px, rgba(54,108,132,.7) 10px, rgba(54,108,132,.7) 20px);
 }
 
 .center {
@@ -42,15 +42,29 @@ body {
 }
 
 
+.page > div {
+    background: rgba(0,0,0,.5);
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
 
+}
 
-.page div {
+.page .href {
     background: rgba(255,255,255,.1);
     cursor: pointer;
-
-    padding: 10px;
     margin: 10px;
+    padding: 0;
+
 }
+
+.href div  {
+    display: inline-block;
+    background: deeppink;
+    padding: 10px;
+    width: auto;
+}
+
 
 #back {
     background: transparent;
@@ -61,7 +75,32 @@ body {
 }
 
 #ans {
+    padding: 10px;
     background: deeppink;
     text-align: center;
 
+}
+
+
+
+.href[data-page="gurme"]  {
+        background: url("gurme.jpg") no-repeat center center fixed;
+        background-size: cover;
+}
+
+.href[data-page="g420"]  {
+        background: url("g420.jpg") no-repeat center center fixed;
+        background-size: cover;
+}
+.href[data-page="coin"]  {
+        background: url("coin.jpg") no-repeat center center fixed;
+        background-size: cover;
+}
+.href[data-page="games"]  {
+        background: url("games.jpg") no-repeat center center fixed;
+        background-size: cover;
+}
+.href[data-page="desteny"]  {
+        background: url("desteny.jpg") no-repeat center center fixed;
+        background-size: cover;
 }
