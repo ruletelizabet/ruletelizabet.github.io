@@ -145,6 +145,7 @@ function showPage(name) {
     }
 }
 
+
 $(function() {
 
     showPage('start');
@@ -194,6 +195,19 @@ $(function() {
             $('.main').css('background', 'url("coinf.jpg") no-repeat center center fixed');
             $('.main').css('background-size','cover');
         }
+
+    });
+
+    $('#game #holder').off('taphold').on("taphold",function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        var timerId = setInterval(function() {
+
+            $('.main').css('background','repeating-radial-gradient(circle, rgba('+Math.floor(Math.random()*255)+',112,184,.8), rgba(165,112,184,.3) 10px, rgba(54,108,132,.8) 20px, rgba(54,108,132,.3) 40px)');
+        }, 100);
+        
+
 
     });
 
