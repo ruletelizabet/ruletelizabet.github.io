@@ -104,3 +104,7 @@ body {
         background: url("destenyb.jpg");
         background-size: contain;
 }
+.href[data-page="game"]  {
+        background: url("game.jpg");
+        background-size: contain;
+}
