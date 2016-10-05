@@ -143,17 +143,23 @@ $(function() {
     showPage('start');
 
 
-    $('.href').on("tap",function () {
+    $('.href').on("tap",function (event) {
+        event.preventDefault();
+event.stopPropagation();
         showPage($(this).attr('data-page'));
     });
 
-    $('.question:not(#list_420_mix)').on("tap",function () {
+    $('.question:not(#list_420_mix)').on("tap",function (event) {
+        event.preventDefault();
+event.stopPropagation();
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
         showPage('answer');
     });
 
-    $('#list_420_mix').on("tap",function () {
+    $('#list_420_mix').on("tap",function (event) {
+        event.preventDefault();
+event.stopPropagation();
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
         showPage('answer');
