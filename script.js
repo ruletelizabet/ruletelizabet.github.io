@@ -134,24 +134,32 @@ jQuery.fn.getArray = function () {
 }
 
 function showPage(name) {    
-    $('.page').hide();
-    $('#'+name).show();
+    $('.page').hide(300);
+    $('#'+name).show(300);
+    $('.center').center();
 }
 
 $(function() {
 
+    $('.center').center();
     showPage('start');
+    $('.center').center();
 
-    $('.href').on("vclick",function () {
-        showPage($(this).attr('data-page'));
+    $(window).resize(function(){
+        $('.center').center();
     });
 
-    $('.question:not(#list_420_mix)').on("vclick",function () {
+    $('.href').on("tap",function () {
+        showPage($(this).attr('data-page'));
+        $('.center').center();
+    });
+
+    $('.question:not(#list_420_mix)').on("tap",function () {
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
     });
 
-    $('#list_420_mix').on("vclick",function () {
+    $('#list_420_mix').on("tap",function () {
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
     });
@@ -186,9 +194,5 @@ $(function() {
         }
     });
 */
-    $('.center').center();
-    $(window).resize(function(){
-        $('.center').center();
-    });
 
 });
