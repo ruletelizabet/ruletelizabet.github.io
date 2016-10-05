@@ -94,7 +94,7 @@ jQuery.fn.center = function () {
 }
 
 $(function() {
-    $('#list_gurme_light').click(function () {
+    $('#list_gurme_light').on("tap",function () {
         if($(this).attr('data-text') == $(this).text()) {
             $(this).text(randomList(list_gurme_light));
         }
@@ -102,6 +102,11 @@ $(function() {
             $(this).text($(this).attr('data-text'));
         }
     });
+
+
     $('.buttons').center();
+    $(window).resize(function(){
+        $('.buttons').center();
+    });
 
 });
