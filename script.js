@@ -86,6 +86,12 @@ console.log(randomList(list_420_games));
 console.log(randomList(list_420_games));
 console.log(randomList(list_420_games));
 
+jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", (($(window).height() - this.outerHeight()) / 2) + $(window).scrollTop() + "px");
+    this.css("left", (($(window).width() - this.outerWidth()) / 2) + $(window).scrollLeft() + "px");
+    return this;
+}
 
 $(function() {
     $('#list_gurme_light').click(function () {
@@ -96,6 +102,6 @@ $(function() {
             $(this).text($(this).attr('data-text'));
         }
     });
-
+    $('.buttons').center();
 
 });
