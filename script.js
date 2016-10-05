@@ -7,7 +7,7 @@
                             'Сабвей',
                             'Даниловский рынок',
                             'Коньково'],
-        list_gurme =       ['На чили', 
+        list_gurme_std =       ['На чили', 
                             'Вокер',
                             'Хадсон Дели',
                             'Шейк шак',
@@ -103,8 +103,8 @@ jQuery.fn.getArray = function () {
         case 'list_gurme_light':
             a = list_gurme_light;
             break;
-        case 'list_gurme':
-            a = list_gurme;
+        case 'list_gurme_std':
+            a = list_gurme_std;
             break;
         case 'list_gurme_krazy':
             a = list_gurme_krazy;
@@ -136,7 +136,7 @@ $(function() {
 
     clear();
 
-    $('.buttons div').on("tap",function () {
+    $('.buttons div:not(#list_420_mix)').on("tap",function () {
         if($(this).attr('data-text') == $(this).text()) {
             clear();
             $(this).text(randomList($(this).getArray()));
@@ -153,10 +153,12 @@ $(function() {
         if($(this).attr('data-text') != $(this).text()) {
             clear();
             $(this).text($(this).attr('data-text'));
+            $(this).css('text-align','left');
         }
         else {
             clear();
             $(this).text(randomList(list_420_salt) + ' + ' + randomList(list_420_sugar));
+            $(this).css('text-align','center');
         }
     });
 
