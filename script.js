@@ -147,6 +147,7 @@ $(function() {
         event.preventDefault();
 event.stopPropagation();
         showPage($(this).attr('data-page'));
+        alert(1);
     });
 
     $('.question:not(#list_420_mix)').on("tap",function (event) {
@@ -155,6 +156,7 @@ event.stopPropagation();
         var text = randomList($(this).getArray());
         $('#answer div').text(text);
         showPage('answer');
+        alert(2);
     });
 
     $('#list_420_mix').on("tap",function (event) {
@@ -163,6 +165,7 @@ event.stopPropagation();
         var text = randomList(list_420_salt) + ' + ' + randomList(list_420_sugar);
         $('#answer div').text(text);
         showPage('answer');
+        alert(3);
     });
 
 /*
