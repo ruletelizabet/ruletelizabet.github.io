@@ -80,11 +80,15 @@ function randomList(array) {
     return array[Math.floor(Math.random()*array.length)];        
 }
 
-console.log(randomList(list_420_games));
-console.log(randomList(list_420_games));
-console.log(randomList(list_420_games));
-console.log(randomList(list_420_games));
-console.log(randomList(list_420_games));
+function clear () {
+    $('.buttons div').each(function(){
+        if($(this).attr('data-text') != $(this).text()) {
+            $(this).text($(this).attr('data-text'));
+            $(this).css('text-align','left');
+        }
+    });
+}
+
 
 jQuery.fn.center = function () {
     this.css("position","absolute");
@@ -93,16 +97,68 @@ jQuery.fn.center = function () {
     return this;
 }
 
+jQuery.fn.getArray = function () {
+    var a;
+    switch (this.attr('id')) {
+        case 'list_gurme_light':
+            a = list_gurme_light;
+            break;
+        case 'list_gurme':
+            a = list_gurme;
+            break;
+        case 'list_gurme_krazy':
+            a = list_gurme_krazy;
+            break;
+        case 'list_drugs':
+            a = list_drugs;
+            break;
+        case 'list_420_salt':
+            a = list_420_salt;
+            break;
+        case 'list_420_sugar':
+            a = list_420_sugar;
+            break;
+        case 'list_420_games':
+            a = list_420_games;
+            break;
+    
+        default:
+            a = [];
+            break;
+    }
+    return a;
+}
+
 $(function() {
-    $('#list_gurme_light').on("tap",function () {
+
+    
+
+
+    clear();
+
+    $('.buttons div').on("tap",function () {
         if($(this).attr('data-text') == $(this).text()) {
-            $(this).text(randomList(list_gurme_light));
+            clear();
+            $(this).text(randomList($(this).getArray()));
+            $(this).css('text-align','center');
         }
         else {
+            clear();
             $(this).text($(this).attr('data-text'));
+            $(this).css('text-align','left');
         }
     });
 
+    $('#list_420_mix').on("tap",function () {
+        if($(this).attr('data-text') != $(this).text()) {
+            clear();
+            $(this).text($(this).attr('data-text'));
+        }
+        else {
+            clear();
+            $(this).text(randomList(list_420_salt) + ' + ' + randomList(list_420_sugar));
+        }
+    });
 
     $('.buttons').center();
     $(window).resize(function(){
